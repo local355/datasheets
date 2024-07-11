@@ -1,0 +1,110 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+  body
+    div(id='viewer')
+      iframe(
+        id='ifviewer',
+        src=srcs,
+        width='100%',
+        height='400px')
+
+    div
+      input(
+        id='rename'
+        type='text'
+        name='rename'
+        )
+
+      input(
+        type='button'
+        value='Rename'
+        name='btnrename'
+        onClick='rename()'
+        )
+
+    div()
+      input(
+        id='prevs'
+        type='button'
+        name='prevs'
+        value='Prevs'
+        onClick='prevs()'
+      )
+      input(
+        id='next '
+        type='button'
+        name='next'
+        value='Next'
+        onClick='next()'
+      )
+      p(
+        class='nav'
+        id='filename'
+      ) File Name
+    div 
+      p move to
+      input(
+        type='button'
+        value='IC'
+        onclick='Move("IC/")'
+      )
+      input(
+        type='button'
+        value='TRANSISTOR'
+        onclick='Move("TRANSISTOR/")'
+      )
+      input(
+        type='button'
+        value='ELSE'
+        onclick='Move("ELSE/")'
+      )
+      input(
+        type='button'
+        value='DIODA'
+        onclick='Move("DIODA/")'
+      )
+      input(
+        type='button'
+        value='not'
+        onclick='Move("NOT/")'
+      )
+
+    div
+      h3 input
+      label(
+        for='part-number'
+        ) Part Number  
+      input(
+        id='part-number'
+      )  
+      input(
+        type='button'
+        value='PN'
+        onclick='partNumber()'
+      )
+
+      label(
+        for='datasheet'
+        ) datasheet : 
+      input(
+        id='datasheet'
+        value='test datasheet'
+      )
+      input(
+        type='button'
+        value='ds'
+        onclick='datasheet()'
+      )
+      input(
+        type='button'
+        value='bilk'
+        onclick='bulk()'
+      )
+
+    script( type='text/javascript', src='/javascripts/fileman.js')
+    script( type='text/javascript', src='/javascripts/inserts.js')
+    block content
